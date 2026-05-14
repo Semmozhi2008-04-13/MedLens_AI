@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+easyocr
+pillow
+requests
+python-multipart
