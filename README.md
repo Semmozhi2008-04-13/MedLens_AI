@@ -30,8 +30,9 @@ AI-powered medicine verification and healthcare insight platform using OCR and F
 - Python
 - FastAPI
 
-### OCR & AI
+### OCR & API Integrations
 - EasyOCR
+- OpenFDA API
 
 ---
 
@@ -45,10 +46,9 @@ MedLens-AI/
 │   ├── uploads/
 │   └── requirements.txt
 │
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
+│── index.html
+│── style.css
+│── script.js
 │
 ├── README.md
 └── .gitignore
