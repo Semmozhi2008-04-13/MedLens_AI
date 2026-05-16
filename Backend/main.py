@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 
-from utils.ocr import extract_text
-from utils.openfda import search_medicine
+from Backend.utils.ocr import extract_text
+from Backend.utils.openfda import search_medicine
 
 app = FastAPI()
 
