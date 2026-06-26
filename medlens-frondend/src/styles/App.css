@@ -1,0 +1,257 @@
+.app {
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+  position: relative;
+}
+
+.app.dark {
+  background: #0a0a1a;
+  color: #ffffff;
+}
+
+.app.light {
+  background: #f0f4ff;
+  color: #1a1a2e;
+}
+
+/* ===== INTERACTIVE MOUSE GLOW ===== */
+.mouse-glow {
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.08), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  transition: left 0.3s ease-out, top 0.3s ease-out;
+  mix-blend-mode: screen;
+}
+
+/* ===== ANIMATED GRADIENT ORBS ===== */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.2), transparent);
+  top: -100px;
+  left: -100px;
+  animation: orbFloat1 20s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2), transparent);
+  bottom: -50px;
+  right: -50px;
+  animation: orbFloat2 25s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbFloat3 30s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(50px, 30px) scale(1.1); }
+  50% { transform: translate(-20px, -40px) scale(0.9); }
+  75% { transform: translate(30px, -20px) scale(1.05); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, 20px) scale(1.1); }
+  50% { transform: translate(30px, -30px) scale(0.9); }
+  75% { transform: translate(-20px, 40px) scale(1.05); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  33% { transform: translate(-50%, -50%) scale(1.2); }
+  66% { transform: translate(-50%, -50%) scale(0.8); }
+}
+
+/* ===== PARTICLES ===== */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: float-particle linear infinite;
+}
+
+.particle.cyan {
+  background: radial-gradient(circle, #00f0ff, transparent);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.particle.purple {
+  background: radial-gradient(circle, #7c3aed, transparent);
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+}
+
+.particle.white {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+}
+
+@keyframes float-particle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  10% { opacity: 0.8; }
+  25% {
+    transform: translate(50px, -30px) scale(1.2);
+  }
+  50% {
+    transform: translate(-30px, 20px) scale(0.8);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(40px, -50px) scale(1.1);
+  }
+  90% { opacity: 0.8; }
+  100% {
+    transform: translate(-20px, 10px) scale(1);
+    opacity: 0.2;
+  }
+}
+
+/* ===== GRID OVERLAY ===== */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+}
+
+.grid-line {
+  position: absolute;
+  background: linear-gradient(90deg, #00f0ff, transparent);
+}
+
+.grid-line.horizontal {
+  width: 100%;
+  height: 1px;
+  top: 50%;
+}
+
+.grid-line.vertical {
+  height: 100%;
+  width: 1px;
+  left: 50%;
+  background: linear-gradient(180deg, #7c3aed, transparent);
+}
+
+/* ===== SHIMMER EFFECT ===== */
+.shimmer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.02) 45%,
+    rgba(255, 255, 255, 0.04) 50%,
+    rgba(255, 255, 255, 0.02) 55%,
+    transparent 60%
+  );
+  background-size: 200% 200%;
+  animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== APP FOOTER ===== */
+.app-footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+  z-index: 1;
+  color: #7f93bb;
+  font-size: 0.95rem;
+}
+
+.app.light .app-footer {
+  border-top-color: rgba(0, 0, 0, 0.06);
+  color: #4a4a6a;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #aab4d4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #00f0ff;
+}
+
+.app.light .footer-links a {
+  color: #4a4a6a;
+}
+
+.app.light .footer-links a:hover {
+  color: #00f0ff;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .orb-1, .orb-2, .orb-3 {
+    width: 200px;
+    height: 200px;
+  }
+  .mouse-glow {
+    width: 300px;
+    height: 300px;
+  }
+  .grid-overlay {
+    display: none;
+  }
+}

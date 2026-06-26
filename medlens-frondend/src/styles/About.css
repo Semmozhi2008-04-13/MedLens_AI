@@ -1,0 +1,127 @@
+.about-section {
+  padding: 100px 8%;
+  position: relative;
+  z-index: 1;
+}
+
+.about-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.app.light .about-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.about-description {
+  color: #aab4d4;
+  line-height: 1.9;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.app.light .about-description {
+  color: #4a4a6a;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.impact-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.app.light .impact-card {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+  border-color: #00f0ff;
+}
+
+.impact-icon {
+  font-size: 2rem;
+  color: #00f0ff;
+  margin-bottom: 12px;
+}
+
+.impact-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.app.light .impact-card h3 {
+  color: #1a1a2e;
+}
+
+.impact-card p {
+  color: #aab4d4;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.app.light .impact-card p {
+  color: #6a6a8a;
+}
+
+.about-footer {
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #7f93bb;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.app.light .about-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  color: #6a6a8a;
+}
+
+.lock-icon {
+  color: #00f0ff;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 5%;
+  }
+  .about-card {
+    padding: 30px 20px;
+  }
+  .about-description {
+    font-size: 1rem;
+  }
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
